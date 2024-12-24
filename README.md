@@ -1,4 +1,3 @@
-
 # Auto EPUB Mover and Kepubify Converter
 
 This project automates the process of converting `.epub` files to `.kepub.epub` format and moves them to a designated folder on your Mac. It includes:
@@ -13,7 +12,6 @@ Before using the script, ensure that you have the following installed on your Ma
 
 1. **Homebrew**: A package manager for macOS.
 2. **Kepubify**: A command-line tool to convert `.epub` to `.kepub.epub`.
-3. **Git**: To clone the repository.
 
 ### Install Dependencies
 
@@ -28,27 +26,27 @@ Before using the script, ensure that you have the following installed on your Ma
      brew install --cask kepubify
      ```
 
-3. Ensure that you have Git installed:
-   ```bash
-   git --version
-   ```
-
 ---
 
 ## Setup Instructions
 
-### 1. Clone This Repository
+### 1. Download Files
 
-Clone this repository to your Mac:
+Download the following files from this repository:
 
-```bash
-git clone https://github.com/rikkibelle/kepubify-and-mover.git
-cd kepubify-and-mover
-```
+- `move_epubs.sh`: The script to automatically move `.epub` files and run `kepubify`.
+- `com.rikkibelle.moveepubs.plist`: The `launchd` job file to run the script automatically on startup.
+
+You can download these files directly from the repository page on GitHub.
 
 ### 2. Add the Script to `/usr/local/bin`
 
-- Move the `move_epubs.sh` script to `/usr/local/bin` (or any directory in your `PATH`).
+Move the `move_epubs.sh` script to `/usr/local/bin` (or any directory in your `PATH`).
+
+```bash
+sudo mv move_epubs.sh /usr/local/bin/
+```
+
 - You can run the script manually or automate it with `launchd`.
 
 ### 3. Set Up `launchd` to Run on Startup
@@ -99,4 +97,3 @@ If you encounter any issues:
 - Ensure that `launchd` is running and the plist file is loaded properly.
 
 ---
-
